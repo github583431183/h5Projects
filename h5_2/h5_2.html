@@ -1,0 +1,194 @@
+<html>
+<head>
+<title>HTML_DAY_2</title>
+
+<!-- 
+<meta> 元素可提供有关页面的元信息（meta-information），比如针对搜索引擎和更新频度的描述和关键词。
+<meta> 标签位于文档的头部，不包含任何内容。
+<meta> 标签的属性定义了与文档相关联的名称/值对。
+
+content	定义与 http-equiv 或 name 属性相关的元信息
+
+http-equiv	把 content 属性关联到 HTTP 头部。
+(
+content-type
+expires
+refresh  <meta http-equiv="refresh" content="3;http://www.baidu.com" /> 3s后链接到百度
+set-cookie
+)
+
+name 把 content 属性关联到一个名称。
+(
+author
+description
+keywords
+generator
+revised
+others
+)
+
+scheme	定义用于翻译 content 属性值的格式。
+
+
+-->
+<meta http-equiv="Content-Type" content="text/html;charset=gbk" />
+<meta http-equiv="refresh" content="300;http://www.baidu.com" />
+<meta name="author" content="" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<!-- css样式
+border 边框
+solid 填充
+-->
+<style type="text/css">
+li{ border:1px solid red;}
+</style>
+
+<!-- javascript
+-->
+<script type="text/javascript">
+
+// 页面加载后执行匿名函数
+window.onload = function(){// 创建一个匿名函数
+	var obj = document.createElement("img");// 创建一个图片标签
+	obj.src="img/cat.jpg";// 设置图片的路径
+	obj.width="500";// 设置图片的宽度
+	document.body.appendChild(obj);// 将图片加载到页面中
+}
+
+</script>
+
+</head>
+<body>
+
+<!--
+<pre></pre>标签
+pre 元素可定义预格式化的文本。被包围在 pre 元素中的文本通常会保留空格和换行符。而文本也会呈现为等宽字体。
+<pre> 标签的一个常见应用就是用来表示计算机的源代码。
+ -->
+<pre>
+
+使用js加载图片
+window.onload = function(){
+var obj = document.createElement("img");
+obj.src="img/cat.jpg";
+obj.width="500"
+document.body.appendChild(obj);
+
+</pre>
+
+
+<center>
+
+<!-- 
+<marquee> 属性介绍
+direction 方向 left (默认)， right 向右，up 向上，down 向下
+behavior :行为：scroll 默认，alternate 左右, slide 只一次
+width  宽度
+height  高度
+bgcolor 背景色
+hspace  水平方向空白
+vspace 垂直距离，距离上方
+scrollamount 速度，像素/秒
+scrolldelay 间隔 单位：毫秒，(1秒＝1000毫秒)
+-->
+<marquee bgcolor="red" width="500" 
+direction="left" 
+scrollamout="20"
+scrolldelay="100"
+behavior="scroll"
+vspace="50"
+>
+我的HTML
+</marquee>
+
+</center>
+
+
+<!-- 有序列表
+start:规定有序列表的起始值。
+type:规定在列表中使用的标记类型。
+(1
+A
+a
+I
+i)
+
+-->
+<ol start="4" type="a">
+
+<li>北京</li>
+<li type="I" start="1">天津</li>
+<li>承德</li>
+<li>门头沟</li>
+<li>门沟</li>
+
+</ol>
+
+<!-- 无序列表
+
+-->
+<ul type="a">
+<li>北京 </li>
+<li>承德</li>
+<li>门头沟</li>
+<li>门沟</li>
+</ul>
+
+<!-- 
+列表嵌套
+<ul> 无序列表
+<ol> 有序列表
+-->
+<ul>
+	<li>周边旅游
+		<ol>
+			<li>北京</li>
+			<li>天津</li>
+			<li>承德</li>
+			<li>门头沟</li>
+		</ol>
+	</li>
+	<li>国内旅游</li>
+
+三亚
+海口
+张家界
+桂林
+	
+	<li>出境旅游</li>
+	
+普吉岛
+巴厘岛
+泰国
+长滩岛
+	
+</ul>
+
+<!-- 自定义列表-->
+<dl>
+	<dt>周边旅游
+		<dd>北京</dd>
+		<dd>天津</dd>
+		<dd>承德</dd>
+	</dt>
+
+	<dt>国内旅游
+		<dd>三亚</dd>
+		<dd>海口</dd>
+		<dd>张家界</dd>
+		<dd>桂林</dd>
+	</dt>
+	
+	<dt>出境旅游
+		<dd>普吉岛</dd>
+		<dd>巴厘岛</dd>
+		<dd>泰国</dd>
+		<dd>长滩岛</dd>
+	</dt>
+</dl>
+
+
+</body>
+</head>
+</html>
