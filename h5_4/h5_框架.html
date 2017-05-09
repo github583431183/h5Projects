@@ -1,0 +1,189 @@
+<!-- 
+
+框架提供将一个浏览器窗口划分为多个区域，每个区域都可以显示不同HTML文档的方法。
+使用框架的最常见情况就是：
+一个框架显示导航控件的文档，
+而另一个框架显示含有内容的文档。
+
+
+框架集(frameset)是HTML文件，它定义一组框架的布局和属性，
+包括框架的数目、框架的大小和位置以及在每个框架中初始显示的页面的URL。
+框架集文件本身不包含要在浏览器中显示的HTML内容；
+框架集文件只是向浏览器提供应如何显示一组框架，以及在这些框架中应显示哪些文档的有关信息。
+
+
+框架(frame)是浏览器窗口中的一个区域，它可以显示与浏览器窗口的其余部分中所显示内容无关的HTML文档（每个框架中显示一个独立的HTML文档）。
+
+<frameset>标记属性
+cols	pixels、%、*	定义框架集中列的数目和尺寸 
+rows	pixels、%、*	定义框架集中行的数目和尺寸 
+bordercolor	颜色值	框架边框的颜色
+frameborder	0、1或no、yes	规定是否显示框架周围的边框。 
+border	整数	框架边界线的宽度。
+
+<frame>标记属性
+name		定义框架名称
+src	URI	为当前框架指定初始显示文档的地址
+noresize	noresize	如果指定此布尔属性，则指定框架不能改变大小，默认情况下是可以通过鼠标拖动来调整框架大小的。
+scrolling	auto | yes | no	指定框架的滚动显示方式。
+
+框架页面结构
+
+<html>
+<head>
+        <title>网站后台管理系统</title>
+        <meta http-equiv=“content-type” content=“text/html;charset=utf-8”>
+</head>
+<frameset  rows=“80,*” cols=“*” frameborder=“0” border=“0” >
+        <frame src=“” name=“topMain” />
+        <frameset cols=“80,*” frameborder=“0” border=“0” framespcing=“0”>
+                <frame src=“left.html” name=“leftMain” noresize=“noresize” />
+                <frame src=“main.html” name=“mainFrame” id=“mainFrame” />
+        </frameset>
+        <noframes>你的浏览器不支持框架！</noframes>
+</frameset>
+</html>
+
+
+FrameSet注意事项
+	在使用了框架集(Frameset)的HTML页面中，body标记被frameset取代。
+	Frameset用于定义框架结构，至于框架中具体显示什么页面，则由其子元素frame设定。
+	Frameset的子元素noframes用来指定浏览器不支持框架页时显示的信息
+	Frameset的标签内容中还可以有frameset（框架嵌套）
+	Frameset为W3C非推荐元素，仅可在Frameset DTD的情况下使用
+
+
+Frame注意事项
+	Frame元素用来定义单个框架的显示内容与显示方式
+	Frame为单边标记，因此用“/”结束。
+	Frame元素为Frameset的子元素。
+	Frame为W3C非推荐元素，仅可在frameset DTD的情况下使用
+
+<noframes>
+概念：提供给不支持框架的浏览器使用
+语法：<noframes>不支持框架内容</noframes>
+<frameset cols=“150,*”>
+		<frame src=“navi.html” noresize=“noresize” />
+		<frame src=“main.html” name=“main”>
+		<noframes>你的浏览器不支持框架！</noframes>
+</frameset>
+
+使用框架具有以下优点
+	（1）增强网页导航功能；
+	（2）访问者的浏览器不需要为每个页面重新加载与导航相关的图形；
+	（3）每个框架都具有自己的滚动条，因此访问者可以独立滚动这些框架
+使用框架具有以下缺点
+	（1）很难实现不同框架中各元素的精确图形对齐；
+	（2）对导航进行测试可能很耗时间；
+	（3）老的浏览器不支持框架；
+	（4）整个浏览空间变小，让人感觉缩手缩脚；
+	（5）使用框架后，容易在每个框架中产生滚动条，给浏览者造成不便。
+
+	
+<iframe>内嵌框架
+概念：iframe元素会创建包含另外一个文档的内联框架（即行内框架）。
+语法：
+<iframe name=“” src=“URL地址” width=“宽度” height=“高度”>
+	无法显示时的文本内容
+</iframe>
+
+说明
+	iframe用来在文档中嵌入一个行内框架
+	iframe为body的子元素，因此iframe必须放置于body元素内
+	iframe框架可放置在网页中的任何位置
+	对于不支持iframe的浏览器，可以设置替代内容
+	iframe为W3C非推荐元素，仅可在 Transitional DTD的情况下使用
+	终止标签不可省略
+
+name	name值	定义框架名称
+src	URI	规定在 iframe 中显示的文档的 URL
+scrolling	auto | yes | No	规定是否在 iframe 中显示滚动条。
+frameborder	1 | 0	指定是否显示当前框架的边框
+align	预定义值 | left	指定内嵌框架的对齐方式，可能的取值有：left、right、top、middle、bottom（不建议使用）
+width	长度值	指定内嵌框架的宽度，整数的像素值或百分比值
+height	长度值	指定内嵌框架的高度，整数的像素值或百分比值
+
+<legend> 元素为 fieldset 元素定义标题（caption）。
+-->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title> frameset 框架集 </title>
+  <meta http-equiv="Content-Type" content="text/html;charset=gbk" />
+  <meta name="author" content="" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <link rel="stylesheet" type="text/css" href="" />
+  <style type="text/css"></style>
+  <script type="text/javascript"></script>
+ </head>
+
+ <body>
+  <table width="960" align="center"  border="10" bordercolor="red"   cellpadding="30">
+	<tr>
+		<td align="center">
+			<form action="" method="" name="">
+			
+				<fieldset>
+					<legend>用户登录信息</legend>
+					
+					<table width="80%" border="1" bordercolor="red" cellspacing="10">
+						<tr>
+							<td align="right">帐户：</td>
+							<td><input type="text" name="username"  /></td>
+						</tr>
+						<tr>
+							<td align="right">密码：</td>
+							<td><input type="password" name="pass"  /></td>
+						</tr>
+					</table>
+				</fieldset>
+				
+				<fieldset>
+					<legend>用户基本信息</legend>
+					<table width="80%">
+						<tr>
+							<td align="right">地址：</td>
+							<td><input type="text" name="address" /></td>
+						</tr>
+						<tr>
+							<td align="right">邮箱：</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td align="right">手机：</td>
+							<td></td>
+						</tr>
+						</tr>
+					</table>
+				</fieldset>
+				
+				<fieldset>
+					<legend>本站服务内容</legend>
+					<table width="80%">
+						<tr>
+							<td>
+							<textarea cols="80" rows="5" name="serv">本站服务内容：服务服务服务服务服务服务服务服务服务服务服务服务服务服务服务服务服务服务服务服务服务服务服务服务服务服务服务服务服务服务服务服务服务服务服务服务服务服务服务服务服务服务服务服务服务
+							</textarea>
+							</td>
+						</tr>
+						<tr>
+							<td>
+							<input type="checkbox" checked="checked" name="server" value="agree" />我同意以上条款
+							</td>
+						</tr>
+						<tr>
+							<td align="center">
+							<input type="submit" name="submit" value="同意并注册" />
+							</td>
+						</tr>
+					</table>
+				</fieldset>
+				
+			</form>
+		</td>
+	</tr>
+  </table>
+ </body>
+</html>

@@ -1,0 +1,195 @@
+
+<!-- 
+
+Get (表单的默认传值方式)
+通过Get方式传值：名称(name)和值(name的值)以“？”的跟在action处理页面的后面
+
+如果有多个名称和值，用“&”号连接
+这个方式传值：名称和值都在地址栏中显示(不安全)
+地址栏的空间（容量有限）<2KB
+一般用在要求（安全方面）不高，并且一些简单的数据。
+通过用在查询
+
+
+Post
+不在地址栏中显示
+相对安全
+一般用在数据库方面，修改，删除
+在上传一些复杂的数据的时候用post
+	如：上传图片，文件等。
+	注意：在上传文件时候，编码方式一定选择：enctype=”multipart/form-data”
+	大小没有限制
+Enctype=”” 表单的编码方式两种：
+	Application/x-www-form-urlencoded(默认)
+	enctype=”multipart/form-data”
+
+
+表单的元素
+分类：input  type=”text,password,radio,checkbox,button,submit reset image,hidden, file”
+
+type=”text”单行文本域
+
+Type=”password”密码域
+
+Type=”radio” 单选，外观是一个圆圈
+
+Type=”Checkbox” 复选，外观是方框
+
+Type=”button” 普通按钮
+
+Type=”submit ”  提交按钮
+
+Type=”reset ” 重置按钮
+
+Type=”image” 图片按钮，功能和submit一样,对表单具有提交的功能。
+
+Type=”hidden” 隐藏域
+
+Type=”file” 上传文件域
+
+Select option 下拉列表
+	<select name=”fruit” >
+		<option value=”A”>水果A</optin>
+		<option value=”B”>水果B</optin>
+		<option value=”C”>水果C</optin>
+	</select>
+	
+Textarea 多行文本区域 textarea cols rows name
+
+		<textarea name="sef" cols="50" rows="5">
+			请请请
+		</textarea>
+	
+表单的提交
+	<input type=”submit” value=”提交” name=”submit” />
+	<input type=”reset” value=”重写”  />
+	<input type=”radio” name=” 是一组的相同”  value=”不能少”  ID＝“” />
+			value是传到服务器上的值。
+			
+为了增加体验：<label for=”表单元素的ID”></label>
+注意：ID在当前网页中只名称是唯一性。不能重复
+	
+-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title> form 进阶 </title>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+  <meta name="author" content="" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <link rel="stylesheet" type="text/css" href="" />
+  <style type="text/css"></style>
+  <script type="text/javascript"></script>
+ </head>
+ 
+ <body>
+	 <form name="form1" method="post" action="reg.php">
+		<fieldset>
+			<legend>本站用户注册信息表</legend>
+			
+			<table width="400" align="center" border="1">
+			  <caption>会员注册信息</caption>
+			  
+				<tr>
+					<td>用户名：</td>
+					<td><input type="text" name="username"  /></td>
+				</tr>
+				
+				<tr>
+					<td>密码：</td>
+					<td><input type="password" name="userpwd" /></td>
+				</tr>
+				
+				<tr>
+					<td>性别：</td>
+					<td>
+						<input type="radio" name="sex" value="boy"  id="boy"  /><label for="boy">男</label>
+						<input type="radio" name="sex" value="girl" checked="checked"/>女
+						<input type="radio" name="sex" value="sec" id="tt" /><label for="tt">保密</label>
+					</td>
+				</tr>
+				<tr>
+					<td>爱好</td>
+					<td>
+					<input type="checkbox" name="hobby" value="reading" />阅读
+					<input type="checkbox" name="hobby" value="dancing" checked="checked" />跳舞
+					<input type="checkbox" name="hobby" value="sing" id="sing" /><label for="sing">唱歌</label>
+					
+					</td>
+				</tr>
+				
+				<tr>
+					<td>请上传您的照片</td>
+					<td>
+						<input type="file" name="photo" />
+					</td>
+				</tr>
+				
+				<tr>
+					<td>籍贯A</td>
+					<td>
+						<select name="jiguan">
+							<option value="check" selected="selected">========请选择===========</option>
+							<option value="heibei">河北</option>
+							<option value="shanghai">上海</option>
+						</select>
+					</td>
+				</tr>
+					
+				<tr>
+					<td>水果</td>
+					<td>
+								<select name="address">
+									<optgroup label="北京">
+										<option value="a">海淀</option>
+										<option value="b">东城</option>
+										<option value="c">西城</option>
+										<option value="d">朝阳</option>
+									</optgroup>
+
+									<optgroup label="河北">
+										<option value="a">保定</option>
+										<option value="b">石家庄</option>
+										<option value="c">廊坊</option>
+										<option value="d">唐山</option>
+									</optgroup>
+
+								</select>
+					</td>
+					</tr>
+					
+					<tr>
+						<td>籍贯B</td>
+						<td>
+								<select name="fruit" multiple="multiple" size="3">
+									<option value="apple">苹果</option>
+									<option value="banana">香蕉</option>
+									<option value="pear">梨</option>
+									<option value="orange" selected="selected">桔子</option>
+									<option value="watermelon">西瓜</option>
+									<option value="strawberry">草莓</option>
+								</select>
+						</td>
+						</tr>
+					<tr>
+						<td>个人评价</td>
+							<td>
+									<textarea name="sef" cols="30" rows="5">
+										请请请请请请请请请请请请请请请请请请请请请请请请请请请请请请请请请请请请请请请请请请请请请请请请请请请请请请请请请请请请请请请请请请请请请请请请请请请请请请请请请请请请请请请请请请请请请请请请
+									</textarea>
+							</td>
+					</tr>
+					<tr>
+						<td colspan="2" align="center">
+							<input type="reset" value="重置" />	
+							<input type="submit" value="注册" name="submit" />
+							<input type="image" src="img.jpg" name="img" />
+							<input type="button" value="普通按钮" onclick="alert('hello world')" />
+						</td>
+					</tr>
+		  </table>
+		 </fieldset>
+	  </form>
+ </body>
+</html>

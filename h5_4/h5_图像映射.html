@@ -1,0 +1,65 @@
+<!-- 
+
+图像映射
+图像映射是指在图像中的指定区域添加超链接，这些超链接又称为热点。
+图像映射通过<map></map>标记和<area></area>标记进行定义。
+
+<map></map>将所有热点联合为一个整体并命名，该名称指定给<img>标记的usemap属性，将图像和热点连接起来。
+<img src=“1.jpg” usemap=“#Map” />
+<map id=“Map” name=“Map”>
+        <area shape=“热点形状” coords=“坐标” href=“链接” alt=“替代文字” />
+</map>
+
+
+<area>定义一个热点的具体位置和目标链接，
+<area>属性
+shape：热点区域的形状，可选值：rect(矩形)、circle(圆形)、polygon(多边形)
+coords：热点区域的位置坐标，根据shape的不同而不同。
+	对于rect，坐标为（x1,y1,x2,y2），（x1,y1）矩形左上角，(x2,y2)右下角
+	对于circle，坐标为(x,y,r)，(x,y)圆心坐标，r为半径
+	对于polygon，坐为(x1,y1,x2,y2,…xn,yn)，(xn,yn)为第n个顶点坐标
+href：热点链接的目标地址
+alt：替代文本。
+
+
+<img src=“1.jpg” usemap=“#Map”  />
+<map id=“Map” name=“Map”>
+        <area shape=“rect” coords=“2,2,92,40” href=“#” alt=“” />
+        <area shape=“rect” coords=“60,60,92,98” href=“#” alt=“” />
+</map>
+
+
+-->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title> 图像映射 </title>
+  <meta http-equiv="Content-Type" content="text/html;charset=GBK" />
+  <meta name="author" content="" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <link rel="stylesheet" type="text/css" href="" />
+  <style type="text/css"></style>
+  <script type="text/javascript"></script>
+ </head>
+
+ <body>
+ 
+	<img src="test.jpg"  usemap="#Map" border="1" />
+	
+	<map name="Map" id="Map">
+		<area shape="rect" coords="0,0,236,34" href="http://www.baidu.com" />
+	</map>
+	
+	
+	<img src="filedown.jpg" width="164" height="164" usemap="#Map2" border="0" />
+	<map name="Map2" id="Map2">
+	  <area shape="rect" coords="0,0,80,80" href="http://www.baidu.com" />
+	  <area shape="circle" coords="118,43,35" href="http://www.taobao.com" />
+	  <area shape="poly" coords="89,87,15,149,153,152,128,104,122,88" href="http://www.jd.com" />
+	</map>
+	
+	
+ </body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title> 用户名不能为空 </title>
+  <meta http-equiv="Content-Type" content="text/html;charset=gbk" />
+  <meta name="author" content="" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <link rel="stylesheet" type="text/css" href="" />
+  <style type="text/css"></style>
+  
+  <script type="text/javascript">
+  function check(){
+  
+	if(frm.hello.value==""){
+		alert("用户名不能为空");
+		frm.hello.focus();
+		return false;
+	}
+	
+  }
+  </script>
+  
+ </head>
+
+ <body>
+  <form name="frm" action="reg.php">
+  
+	用户名：<input type="text" name="hello" /><br />
+	<input type="submit" value="注册" onclick="return check()" />
+  </form>
+ </body>
+</html>
