@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <title> table </title>
+  <meta http-equiv="Content-Type" content="text/html;charset=GBK" />
+  <meta name="author" content="" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  
+  <link rel="stylesheet" type="text/css" href="" />
+  <style type="text/css"></style>
+  <script type="text/javascript"></script>
+ </head>
+
+ <body>
+ 
+ <!-- 
+ 
+?<table>属性 
+?width 表格宽度 单位像素
+?height 表格的高度：一般不设置，让表格中内容撑开
+?align ：对齐方式：值：left ,right center
+?border :表格的边框
+?bordercolor ：边框的颜色
+?background ：表格背景图 
+?单元格的td的宽度和高度一定和背景图片的宽和高相适应。
+?bgcolor ：表格背景色
+?cellpadding 单元格的填充：单元格中内容到边框的距离
+?cellspacing ：单元格的间距：单元格与单元格之间距离
+?rules ：边框的显示方式。
+		?Rows 显示行边线
+		?Cols 显示列边线
+		?All 合并连线
+		?None 不显示行列线，只有外边框线。
+
+<tr>标签 新的一行
+
+align	Left,right,center	定义表格行的内容水平对齐方式
+valign	Top,middle,bottom	定义表格行的内容垂直对齐方式
+bgcolor	颜色值	定义表格行的背景颜色
+
+<th>和<td>属性
+<th></th>表格标题单元格：加粗居中显示
+<td></td>表格数据单元格 
+
+width	% | pixels	规定表格单元格的宽度。
+height	% | pixels	规定表格单元格的高度。不支持。请使用 CSS 代替。 
+align	left | center | right	规定单元格内容的水平排列方式 
+valign	top | middle | bottom 	规定单元格内容的垂直排列方式 
+bgcolor	颜色值	规定单元格的背景颜色。不支持。请使用 CSS 代替。 
+background 	URI	定义单元格的背景图案 
+?
+单元格的合并方式
+rowspan 	正整数 	设置当前单元格的在垂直方向上合并单元格的个数。 
+colspan	    正整数	设置当前单元格的在水平方向上合并单元格的个数。 
+
+<caption>标签——定义表格标题
+
+概念
+定义表格标题
+语法
+<caption align=“left或center或right”>内容</caption>
+说明：
+用来指定表格的标题或说明 
+caption为table的子元素，且只能在table元素内，应该出现在紧随table开始标签之后，而一个table只能有一个caption 
+终止标签不可省略
+
+ -->
+ 
+ <table bordercolor="red" width="500"  bgcolor="green"  align="center" cellpadding="20" cellspacing="1"  height="300">
+	<tr >
+		<td bgcolor="white"  valign="bottom" colspan="2">法兵法</td> 
+		<td bgcolor="white" >大圣</td><td>孙行者</td>
+	</tr>
+	<tr>
+		<td rowspan="2">八解</td><td>嫦娥</td><td>嫦娥</td>
+	</tr>
+	<tr>
+		<td >玉兔1</td><td>玉兔2</td><td>玉兔3</td>
+	</tr>
+</table>
+ 
+ </body>
+</html>

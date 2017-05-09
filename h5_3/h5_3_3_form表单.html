@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title> form表单初步 </title>
+  <meta http-equiv="Content-Type" content="text/html;charset=GBK" />
+  <meta name="author" content="" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <link rel="stylesheet" type="text/css" href="" />
+  <style type="text/css"></style>
+  <script type="text/javascript"></script>
+ </head>
+
+ <body>
+ 
+ <!-- 
+ 
+ 表单的标签：<form> </form>
+?常用属性
+Name, 
+method(get,post), 
+action(服务器的接收的页面如：reg.php), 
+onsubmit=”JS函数”，
+enctype=”multipart/form-data”
+
+?表单的元素
+?<input type=”text” name=”username” size=”20” maxlength=”30” />
+?<input type=”password” name=”pwdddd” size=”20” maxlength=”30” />
+
+?表单的提交
+?<input type=”submit” value=”提交” name=”submit” />
+?<input type=”reset” value=”重写”  />
+
+
+?Form 标记属性 GET方法，POST方法,
+?enctype= application/x-www-form-urlencoded,  multipart/form-data
+?表单元素
+?文本域 name value size maxlength readonly disabled
+?密码域
+?单选 checked
+?复选，
+?提交按钮
+?重置 reset
+?图片按钮 src
+?普通按钮 button
+?隐藏域 hidden
+?
+?上传文件域 file
+?下拉列表，name multiple size
+?文本区域 textarea cols rows name
+?相关的元素分组filedset legend
+ 
+ -->
+ 
+  <form name="form" method="post" action="reg.php">
+  
+<table width="300" border="0" align="center" cellpadding="10">
+<caption><h2>会员注册</h2></caption>
+	<tr>
+		<td>帐号：</td>
+		<td>
+			<input type="text" name="username" size="20" maxlength="5"/>
+		</td>
+	</tr>
+	<tr>
+		<td>密码：</td>
+		<td>
+			<input type="password" name="mypwd" size="20" maxlength="6"/>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2" align="center">
+			<input type="submit" name="submit" value="提交" />
+			<input type="reset" name="rest" value="重填" />
+		</td>
+	</tr>
+</table>
+
+  </form>
+ </body>
+</html>

@@ -3,28 +3,50 @@
 <title>HTML_DAY_2</title>
 
 <!-- 
-<meta> 元素可提供有关页面的元信息（meta-information），比如针对搜索引擎和更新频度的描述和关键词。
-<meta> 标签位于文档的头部，不包含任何内容。
-<meta> 标签的属性定义了与文档相关联的名称/值对。
+
+<meta>元素可提供有关页面的元信息（meta-information），比如针对搜索引擎和更新频度的描述和关键词。
+<meta>标签位于文档的头部，不包含任何内容。
+<meta>标签的属性定义了与文档相关联的名称/值对。 
+<meta>提供的信息是用户不可见的
+<meta>没有结束标记
+
 
 content	定义与 http-equiv 或 name 属性相关的元信息
 
-http-equiv	把 content 属性关联到 HTTP 头部。
+http-equiv属性：相当于http的文件头作用，它可以向浏览器传回一些有用的信息，以帮助正确地显示网页内容，与之对应的属性值为content，content中的内容其实就是各个参数的变量值
 (
-content-type
+content-type 功能：设定当前页面使用的字符集和语言；
+用法：<meta http-equiv="content-type" content="text/html; charset=gb2312">
+
 expires
-refresh  <meta http-equiv="refresh" content="3;http://www.baidu.com" /> 3s后链接到百度
+refresh 功能：自动刷新，并指向新的页面
+用法：<meta http-equiv="refresh" content="3;http://www.baidu.com" /> 3s后链接到百度
 set-cookie
 )
 
-name 把 content 属性关联到一个名称。
+name属性：主要用于描述网页，与之对应的属性值为content，content中的内容主要是便于搜索引擎机器人查找信息和分类信息用的
 (
-author
-description
-keywords
+author 说明：标注网页的作者
+用法：<meta name=“author” content=“传智播客”>
+
+description 功能：用来告诉搜索引擎你的网站主要内容。
+用法：<meta name=“description” content=“网页内容描述信息"> 
+描述设计规则：
+网页描述为自然语言而不是罗列关键词（与keywords设计正好相反） 
+尽可能准确地描述网页的核心内容，通常为网页内容的摘要信息，也就是希望搜索引擎在检索结果中展示的摘要信息 
+网页描述的文字不必太多，一般不超过搜索引擎检索结果摘要信息的最多字数(100字以内) 
+
+
+keywords  功能： 用来告诉搜索引擎你网页的关键字是什么。 
+用法：<meta name=“keywords” content=“关键字,关键字,关键字”>
 generator
 revised
 others
+
+copyright(版权信息)
+功能：说明网站版权信息 
+用法：<meta name=“copyright" content="信息参数"> 
+
 )
 
 scheme	定义用于翻译 content 属性值的格式。
