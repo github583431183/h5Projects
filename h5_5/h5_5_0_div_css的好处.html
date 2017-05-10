@@ -1,0 +1,102 @@
+<!-- 
+DIV+CSS好处
+
+缩减代码，提高页面浏览速度
+页面体积变小，浏览速度变快 
+强大的字体控制和排版能力 
+更灵活控制页面布局
+表现和内容相分离，干净利落 
+在修改页面的时候更加容易省时
+保持视觉的一致性 
+更好地被搜索引擎收录 
+由于CSS富含丰富的样式，使页面更加灵活性，它可以根据不同的浏览器，而达到显示效果的统一和不变形。
+
+CSS语法
+一个CSS样式表代码由一个或多个CSS规则组成；
+CSS样式规则由选择器和格式声明语句组成；
+选择器通常是您需要改变样式的 HTML 元素；
+格式声明语句放在{ }内；
+每一条格式声明语句由“属性名:属性值”对组成，属性名和属性值间以(:)冒号隔开，每条声明语句以分号“;”结束。
+CSS选择器区分大小写，强烈建议小写。
+
+属性
+在格式声明语句中，属性名称与属性值之间以冒号“：”隔开，
+当定义多个值时，浏览器按照从前向后顺序选择属性值。如果第1个值有效，则尝试使用，如果第1个无效，则使用第2个，依次类推。
+
+
+div.news .title{
+    font-family:”华文行楷”,”宋体”,”Times New Roman”,Arial;
+    text-align:center;
+    font-weight:bold;
+    color:#444444;
+    background-color:#808080;
+}
+
+CSS选择器分类——基本选择器
+
+通用选择器	通用选择器，将匹配任何元素。不建议使用，IE不支持，大网站增加客户端负担。	*{margin:0px;}
+标签选择器	标签选择器，匹配所有HTML标签元素。	p{font-size:14px;}
+类选择器	类选择，定义一类HTML元素的样式。类选择器以”.”来定义	.box{width:800px;}
+id选择器	Id选择器可以为标有特定ID的HTML元素指定特定的样式，只能使用一次。ID选择器以”#”来定义。	#title{font-size:14px;}
+
+
+CSS选择器——组合选择器
+E,F
+多元素选择器	多元素选择器，同时匹配所有E元素或F元素，E和F之间用逗号分隔 	p,h1,h2{margin:0px;}
+E F
+后代元素选择器	后代元素选择器，匹配所有属于E元素后代的F元素，E和F之间用空格分隔 	#slidebar p{font-color:#990000;}
+E > F
+子元素选择器	子元素选择器，匹配所有E元素的子元素F 	div > p{color:#990000;}
+伪类A	链接	a:link,a:hover,a:visited,a:active
+
+
+CSS属性——尺寸属性
+height	auto：自动，浏览器会自动计算高度
+length：使用px定义高度
+%：基于包含它的块级对象的百分比高度 	设置元素高度
+width	同上	设置元素的宽度
+
+CSS属性——字体属性
+font可以同时设置字符的各种属性，包括font-style、font-weight、font-size、line-height、font-family。各属性间用空格隔开。如果同时设置font-size和line-height，这两属性值间以“/”隔开。
+font-family	宋体、黑体等	设置文字字体
+font-size	12px、14px	设置字符大小
+font-style	normail(正常)、(italic)斜体	设置字体样式
+font-weight	normal、bold、bolder、lighter	设置文字粗细
+font	font-size/line-height 	设置文字各种属性的简捷方式
+
+/*新浪首页css*/
+body {font:12px/20px "SimSun","宋体","Arial Narrow",HELVETICA; }
+
+CSS属性——文本属性
+color	#ff0000或red或rgb(3,5,8)	设置文本颜色
+line-height	正整数或百分比	设置行高
+letter-spacing	正整数或负值	字符间距
+text-align	left、center、right	对齐方式
+text-indent 	em或像素	首行文本缩进
+text-decoration 	none、underline,、overline 、line-through	文本的修饰 
+
+p{ text-decoration: underline overline line-through;}   //同时设置多线
+
+
+CSS属性——列表属性
+list-style	square inside url(arrow.gif)	在一个声明中设置所有列表属性
+list-style-image	url(图像路径)	将图象设置为列表项标记。 
+list-style-position 	inside, outside 	设置列表项标记的放置位置。 
+list-style-type	none,disc,square,circle	设置列表项标记的类型。 
+
+
+CSS属性——边框属性
+边框线型
+none：无  solid(实线)  dotted(点状线)  dashed(虚线)  double(双线)  groove(3D 凹槽边框) 
+
+border	border:1px solid #444444;	设置所有边框属性
+border-top
+Border-top-width
+Border-top-style
+Border-top-color		设置顶边框属性
+border-right		设置右边框属性
+border-bottom		设置底边框属性
+border-left		设置左边框属性
+border-color: border-width; border-style;
+
+-->
