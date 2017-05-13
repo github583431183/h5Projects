@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-cn">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<title>网页标题</title>
+	<meta name="keywords" content="关键字列表" />
+	<meta name="description" content="网页描述" />
+	<link rel="stylesheet" type="text/css" href="" />
+	<style type="text/css"></style>
+	<script type="text/javascript">
+	
+	/*
+	
+	Math对象:
+	Math.pow(n1,n2);求n1的n2次方
+	Math.abs(n);求n的绝对值
+	Math.round(n);求n的四舍五入的值
+	Math.max(n1,n2。。。);可以放好多个参数，求这些参数的最大值
+	Math.min();求最小值
+	Math.floor(n);向下取整，不大于n的最大的整数
+	Math.floor(3.1);
+	Math.floor(3.9);
+	Math.floor(3.5);
+	Math.floor(3.6);
+	Math.floor(3.2);
+	Math.ceil(n);向上取整，不小于n的最小的整数
+	Math.ceil(3.4);
+	Math.ceil(3.9);
+	Math.ceil(5.2);
+	Math.ceil(6.4);
+	Math.ceil(9.4);
+	Math.random();获得0和1之间随机数，注意：能包含0不包含1
+		
+	*/
+	
+	
+		var n1=Math.floor(3.1);//3
+		var n2=Math.floor(3.9);//4,3
+		var n3=Math.floor(3.5);//3
+		var n4=Math.floor(3.6);//3
+		var n5=Math.floor(3.2);//3
+		var n6=Math.ceil(-2.3);
+		var n7=Math.ceil(3.9);
+		var n8=Math.ceil(5.2);
+		var n9=Math.ceil(6.4);
+		var n10=Math.ceil(9.4);
+		document.write(n10);
+		
+		var n=Math.random();
+		document.write(n);
+		
+		for(var i=1;i<=6;i++){
+			var n=Math.random();
+			document.write(n);
+			document.write("<br />");
+		}
+		
+		//求10到30之间的随机数,求6个
+		for(var i=1;i<=6;i++){
+			var n=Math.random();
+			n=n*21;
+			n=Math.floor(n);
+			n=n+10;
+			document.write(n+"<br />");
+		}
+		//求20到30随机数，求30到60随机数，求60到90随机数
+		var n1=Math.floor(Math.random()*(30-20+1))+20;
+		var n2=Math.floor(Math.random()*(60-30+1))+30;
+		var n3=Math.floor(Math.random()*(90-60+1))+60;
+		document.write("20到30的随机数"+n1+"<br />");
+		document.write("30到60的随机数"+n2+"<br />");
+		document.write("60到90的随机数"+n3+"<br />");
+	</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-cn">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<title>网页标题</title>
+	<meta name="keywords" content="关键字列表" />
+	<meta name="description" content="网页描述" />
+	<link rel="stylesheet" type="text/css" href="" />
+	<style type="text/css"></style>
+	<script type="text/javascript">
+		/*
+			    *		第一行:1个	2*1(行数)-1
+			   ***		第二行:3个	2*2(行数)-1
+			  *****		第三行:5个	2*3(行数)-1
+			 *******	第四行:7个	2*4(行数)-1
+			*********	第五行:9个	2*5(行数)-1
+			//
+		*/
+		document.write("<p align=\"center\">");
+		for(var i=1;i<=5;i++){//代表行数
+			for(var j=1;j<=(2*i-1);j++){//代表个数
+				document.write("*");
+			}
+			document.write("<br />");
+		}
+		document.write("</p>");
+	</script>
+</head>
+<body>
+
+</body>
+</html>

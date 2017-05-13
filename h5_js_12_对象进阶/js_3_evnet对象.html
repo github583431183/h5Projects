@@ -1,0 +1,111 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-cn">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<title>网页标题</title>
+	<meta name="keywords" content="关键字列表" />
+	<meta name="description" content="网页描述" />
+	<link rel="stylesheet" type="text/css" href="" />
+	<style type="text/css">
+		#d1{
+			background-color:black;
+			height:300px;
+			color:white;
+			cursor:crosshair;
+		}
+	</style>
+	<script type="text/javascript">
+	
+	/*
+	
+		注意：
+		margin:不会触发事件
+	
+		鼠标事件：	
+			onclick：点击事件
+			onmouseover:鼠标放上
+			onmouseout：鼠标离开
+			ondbclick:双击
+			onmousedown: 鼠标按下
+			onmouseup: 鼠标抬起
+			onmousemove: 鼠标移动
+			
+		键盘事件
+			OnkeyDown：键盘按下
+			OnkeyUp:键盘抬起
+			OnkeyPress：按键一次
+			
+		表单事件
+			Onsubmit：表单提交事件
+			Onreset：重置事件
+			Onfocus：获得焦点
+			Onblur：失去焦点
+			
+		窗口事件
+			1)Onload，在网页一打开的时候发生（注意：必须是把所有东西都加载完成之后）
+				<body onload=”init()”>
+				</body>
+			2)window.onload=init注意：函数名init之后没有括号
+			
+		Event:是指事件发生的时候（事件源）相关的一些信息
+			clientX:获得鼠标的X坐标
+			clientY:获得鼠标的Y坐标
+		event.target:事件源
+		在FF里面event需要在函数调用的时候当做参数传递进去
+	
+	*/
+	
+			//鼠标放上等开
+			//鼠标离开灯关
+			function kaideng(){
+				var obj=document.getElementById("d2");//获得id为d1的标签
+				obj.src="images/bulbon.gif";
+			}
+			function guandeng(){
+				var obj=document.getElementById("d2");//获得id为d1的标签
+				obj.src="images/bulboff.gif";
+			}
+	
+	
+			window.onload=init;// 页面加载完成后调用init方法
+			function init(){
+				alert(123);
+			}
+	
+			
+			
+			function xianshi(){
+				var m=document.getElementById("d1");
+				//m.innerHTML="你好";
+				var str=m.innerHTML;// 获取body 中的h5数据
+				alert(str);
+			}
+			
+			
+			
+			function fn(e){
+				var x=e.clientX;
+				var y=e.clientY;
+				var tar = e.target;
+				var obj=document.getElementById("d1");//获得id为d1的对象
+				obj.innerHTML=x+","+y+","+tar;
+			} //
+			
+	</script>
+</head>
+<body><!-- 页面加载完成调用方法有两种 1.标签中调用 <body onload="init()">  2.window.onload=init;-->
+<div id="d1" onclick="xianshi()" >
+	<div>
+		这是汉字
+		<p onmousemove="fn(event)">这是段落</p>
+		<u>abc</u>
+		<a href="#">连接</a>
+	</div>
+</div>
+<div>
+</div>
+
+<img id="d2" src="images/bulboff.gif" onmouseover="kaideng()" onmouseout="guandeng()">
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!-- 
+
+CSS优先级
+	当CSS冲突的时候
+	就近原则
+	行内样>内嵌样式>外部样式
+	行内样式>id>class>标签
+	权重值，特性值
+		标签：1
+		类：10
+		ID：100
+		Style:1000
+		!important
+CSS继承
+	继承:和文本相关的一般都会继承
+	不继承:边框，宽，高，margin,padding  背景等都不继承。
+	继承的权重为0
+
+-->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title> new document </title>
+  <meta http-equiv="Content-Type" content="text/html;charset=gbk" />
+  <meta name="author" content="" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <link rel="stylesheet" type="text/css" href="test1.css" />
+  <style type="text/css">
+	p{color:blue !important;} /* !important 显示为蓝色*/
+	p{color:green;}
+	
+  </style>
+ </head>
+ <body>
+	<p>环顾四周</p>
+ </body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-cn">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<title>网页标题</title>
+	<meta name="keywords" content="关键字列表" />
+	<meta name="description" content="网页描述" />
+	<link rel="stylesheet" type="text/css" href="" />
+	<style type="text/css"></style>
+	<script type="text/javascript">
+		/*
+			第一行：1X1=1
+			第二行：2X1=2	2X2=4
+			第三行：3X1=3	3X2=6	3X3=9
+			1）有九行
+			2）第几行就有几列
+			3）最后的乘法算式是第几行乘以第几列
+		*/
+		document.write("<table border=\"1\">");
+		for(var i=1;i<=9;i++){//用i来代表行数
+			document.write("<tr>");
+				for(var j=1;j<=i;j++){//用j来代表列数
+					document.write("<td>");
+					document.write(i+"X"+j+"="+i*j);
+					document.write("</td>");
+				}
+			document.write("</tr>");
+		}
+		document.write("</table>");
+	</script>
+</head>
+<body>
+
+</body>
+</html>

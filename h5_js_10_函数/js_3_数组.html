@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-cn">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<title>网页标题</title>
+	<meta name="keywords" content="关键字列表" />
+	<meta name="description" content="网页描述" />
+	<link rel="stylesheet" type="text/css" href="" />
+	<style type="text/css"></style>
+	<script type="text/javascript">
+	
+	/*
+	
+	数组：
+		若干数据的集合
+	数组的属性：
+		Var len=arr.length
+		如果保存到变量里面，这个时候变量里面保存的是数字，如果说直接把arr.length写到循环里面，循环的时候会在去arr.length找长度（个数）
+	格式：var arr=[10,20,30];
+	数据：[10,20,30]
+	
+	=》
+	下标：[0，1，2]
+	
+	数据	10	20	30
+	下标	0	1	2
+	
+	*/
+	
+	
+		var arr=[96,86,88,99,87,66,43,2,435,546,67,23,34];//保存的是学生的考试成绩
+		var len=arr.length;
+		alert(len);
+		
+		var num=arr[0];//取值
+		alert(num);
+		
+		var sum=0;
+		/*
+		sum=arr[0]+arr[1]+arr[2]+arr[3]+arr[4]+arr[5]; //arr写的次数多，下标有规律
+			arr[0]=>96;
+			arr[1]=>86;
+			arr[2]=>88;
+			arr[3]=>99;
+			arr[4]=>87;
+			arr[5]=>66;
+		*/
+		for(var i=0;i<len;i++){//0,
+			sum=sum+arr[i];
+			//document.write(i);//0,1,2,3,4,5
+		
+		}
+		document.write("和为："+sum);
+	</script>
+</head>
+<body>
+
+</body>
+</html>

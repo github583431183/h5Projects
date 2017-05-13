@@ -1,0 +1,53 @@
+<!-- 
+
+定位属性：position:static fixed relative absolute
+
+position: （配合着定位坐标 
+Left距左边， top距上边， right 距右边， bottom距底边
+）
+static 静态，不定位
+fixed 固定， 脱离正常的文档流，比普通元素层级要高。相对于浏览器窗口进行定位。
+relative 
+	相对定位。相对于谁？（相对于自己，霸道的相对）
+absolute
+	绝对定位，相对于最近的具有定位属性（不管是相对定位，或者绝对定位都可以）的元素进行定位。
+	脱离正常文档流，层级高于普通元素。
+	相对于它的祖先，有定位属性的祖先。
+	如果没有，相对于body定位。
+	
+  备注：相对定位与绝对定位
+	外层元素通常设置相对定位，不用坐标。
+	内层元素设置绝对定位。配合着定位坐标。
+-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title> new document </title>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+  <meta name="author" content="" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <link rel="stylesheet" type="text/css" href="" />
+  <style type="text/css">
+  
+  .test{width:500px; height:500px; border:2px solid green; margin:50px;}
+  
+  .box{ width:300px; height:300px; border:1px solid red; margin:100px;}
+  
+  .test1{width:110px; height:100px; background:red;}
+  .test2{width:120px; height:100px; background:green; }
+  .test3{width:130px; height:100px; background:blue;}
+  
+  </style>
+ </head>
+
+ <body>
+ <div class="test">
+	<div class="box">
+		<div class="test1"></div>
+		<div class="test2"></div>
+		<div class="test3"></div>
+	</div>
+ </div>
+ </body>
+</html>

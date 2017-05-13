@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-cn" onclick="star(event)"><!-- star(e) 的点击事件 -->
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<title>网页标题</title>
+	<meta name="keywords" content="关键字列表" />
+	<meta name="description" content="网页描述" />
+	<link rel="stylesheet" type="text/css" href="" />
+	<style type="text/css">
+		body{
+			margin:0px;
+			height:300px;
+		}
+	</style>
+	<script type="text/javascript">
+	
+		//在页面点击，能够出现小星星
+		//这个图片是随即大小的
+		window.onload=init;
+		function init(){
+			document.body.bgColor="black";
+		}
+		
+		function star(e){
+			//在网页上点击出现星星
+			var obj=document.createElement("img");
+			obj.src="images/xingxing.gif";
+			//让星星的宽度随即变化(90到30之间的宽度)
+			var w=Math.floor(Math.random()*(90-30+1))+30;
+			obj.width=w;//随即宽度
+			//随即出现位置（鼠标点击在哪就出现到哪）
+			var x=e.clientX;//x需要随即出现
+			var y=e.clientY;//y需要随即出现
+			obj.style.position="absolute";
+			
+			obj.style.top=y+"px";
+			obj.style.left=x+"px";
+			document.body.appendChild(obj);
+		}
+	</script>
+</head>
+<body>
+	<img>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-cn">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<title>网页标题</title>
+	<meta name="keywords" content="关键字列表" />
+	<meta name="description" content="网页描述" />
+	<link rel="stylesheet" type="text/css" href="" />
+	<style type="text/css"></style>
+	<script type="text/javascript">
+		//求最大值和下标
+		var arr=[
+					[34,45,3,23],
+					[43,34,435,34324],
+					[334,54,34,999],
+					[45,34,56,234,54,6456,324,324,546,235,234],
+					[224,456,546,234,32,34,234,324,234],
+					[24,56,324,234,546,45,324]
+				];
+		var max=arr[0][0];
+		var xiabiao1=0;
+		var xiabiao2=0;
+		for(var i=0;i<arr.length;i++){//循环外面的数组
+			for(var j=0;j<arr[i].length;j++){//循环里面的数组
+				if(max<arr[i][j]){//做比较找最大值
+					max=arr[i][j];//把大的值赋值给max
+					xiabiao1=i;//找到下标
+					xiabiao2=j;//找到下标
+					
+				}
+			}
+		}
+		document.write("最大值为:"+max+"下标为:"+xiabiao1+","+xiabiao2);
+	</script>
+</head>
+<body>
+
+</body>
+</html>

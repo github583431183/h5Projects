@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-cn">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<title>网页标题</title>
+	<meta name="keywords" content="关键字列表" />
+	<meta name="description" content="网页描述" />
+	<link rel="stylesheet" type="text/css" href="" />
+	<style type="text/css"></style>
+	<script type="text/javascript">
+	
+	/*
+	
+	流程控制之switch语句
+	格式：
+		Switch(n//变量或者表达式){
+			Case 值1：
+				Document.write(“a”);//语句
+				Break;
+			Case 值2:
+				Document.write(“b”);
+				Break;
+			Case 值3:：
+				Document.write(“c”);
+				Break;
+			Case 值4:：
+				Document.write(“d”);
+				Break;
+			Case 值5：
+				Document.write(“e”);
+				Break;
+			Default:
+				Document.write(“f”);
+		}
+		如果说值和变量n相同，那么就会执行对应值的后边的语句，break就是跳出语句的意思
+	
+	*/
+	
+		//var a =3;
+		var d=new Date();
+		var xingqi = d.getDay();
+		switch(xingqi){
+			case 1:
+				document.write("星期1");
+				break;
+			case 2:
+				document.write("星期2");
+				break;
+			case 3:
+				document.write("星期3");
+				break;
+			case 4:
+				document.write("星期4");
+				break;
+			case 5:
+				document.write("星期5");
+				break;
+			case 6:
+				document.write("星期6");
+				break;
+			default:
+				document.write("星期天");
+		}
+	</script>
+</head>
+<body>
+
+</body>
+</html>

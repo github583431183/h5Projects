@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-cn">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<title>网页标题</title>
+	<meta name="keywords" content="关键字列表" />
+	<meta name="description" content="网页描述" />
+	<link rel="stylesheet" type="text/css" href="" />
+	<style type="text/css"></style>
+	<script type="text/javascript">
+	
+	/*
+	
+	系统内部函数：
+		NaN:Not a number,表示不是数字
+		
+		isNaN:是一个非数字true，
+		
+		isfinite测试一个数是否是无穷大
+		
+		parseInt()转化为整数
+		
+		parseFloat();转化为浮点数
+		
+		parseInt(12,3);//5
+		parseInt(9.9);//9
+		parseInt(6.2);//6
+	
+	*/
+	
+	
+	
+		var num1=12.2;//12.2
+		var num=parseFloat(num1);
+		
+		var num2=12.90;//12.90,12.9
+		var num=parseFloat(num2);
+		
+		var num3=19;//19.0
+		var num=parseFloat(num3);
+		
+		document.write(num);
+		
+		var str1="12.9030abc";//12.903,12.9,不能转换
+		var str2="abc13.9";//NaN,13.9,不能转换
+		var str3="10.9abc";//10.9
+		var str=parseFloat(str3);
+		document.write(str);
+		
+		var n1="abc123";//NaN
+		var n2="123abc";//123
+		var n3="12.903ab";//12
+		var n4="12.9";//12
+		var n5="12.90306";//12
+		var n=parseInt(n5);
+		document.write(n);
+	</script>
+</head>
+<body>
+
+</body>
+</html>

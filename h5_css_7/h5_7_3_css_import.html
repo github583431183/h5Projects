@@ -1,0 +1,38 @@
+<!-- 
+
+CSS引入的方式 行内，内嵌，外部
+	行内
+		在标签内部，直接使用style=”CSS规则”
+		容易写错：<p style=”color=red;”>文字</p>
+		这个地方用冒号
+	内嵌
+		写在<head></head>中
+		写法
+		<style type=”text/css” >样式</style>
+	外部
+		通过link，将外部的样式表文件（*.css）,引入当前页面。
+		写法：
+		<link type=”text/css”  rel=”stylesheet” href=”*.css” />
+		rel说明，当前文件与链接的文件是什么关系
+			stylesheet 样式表的关系。
+		href:指定样式表文件在什么地方（路径）
+	备注：我们在做网站时开发时，通常用的就是这种方式。
+	
+CSS优先级
+	当CSS冲突的时候
+	就近原则
+	行内样>内嵌样式>外部样式
+	行内样式>id>class>标签
+	权重值，特性值
+		标签：1
+		类：10
+		ID：100
+		Style:1000
+		!important
+CSS继承
+	继承:和文本相关的一般都会继承
+	不继承:边框，宽，高，margin,padding  背景等都不继承。
+	继承的权重为0
+
+-->
+

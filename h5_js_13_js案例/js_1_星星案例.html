@@ -1,0 +1,125 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-cn">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<title>网页标题</title>
+	<meta name="keywords" content="关键字列表" />
+	<meta name="description" content="网页描述" />
+	<link rel="stylesheet" type="text/css" href="" />
+	<style type="text/css">
+		#span1{
+			border:1px solid red;
+			width:100px;
+			display:inline-block;
+			height:20px;
+			overflow:hidden;
+		}
+		#span2{
+			display:inline-block;
+			width:0px;
+			height:20px;
+		}
+	</style>
+	<script type="text/javascript">
+	
+	
+			/*
+			
+			this:事件源，对象本身
+			给对象绑定事件:
+				格式：对象.onclick=函数名; 
+					注意：函数名后面不加括号()
+				在绑定事件中，this是可以直接用的 .this.parentNode 就是获得this的父节点
+			删除标签
+				注意:当想要删除标签的时候，必须找到这个对象的上级标签（父节点）
+			
+			*/
+	
+	
+		var count=0;//代表星星的个数
+		var dingshiqi;//定时器名字
+		var shijian=0;//时间
+		var gametime;//记录游戏时间定时器
+		
+		
+	    //设置body的颜色
+		window.onload=init;
+		function init(){
+			document.body.bgColor="green";
+		}
+		
+		
+		//var dingshiqi=window.setInterval("star()",500);// 页面加载完成 启动游戏
+		//创建星星的函数
+		function star(){
+			//创建星星
+			var obj=document.createElement("img");
+			obj.src="images/xingxing.gif";
+			//设置星星的宽度
+			var w=Math.floor(Math.random()*(90-30+1))+30;
+			obj.width=w;
+			//设置随即位置
+			//var x=e.clientX;//鼠标的x坐标
+			//var y=e.clientY;//鼠标的y坐标
+			var x=Math.floor(Math.random()*1300)+30;
+			var y=Math.floor(Math.random()*500)+30;
+			obj.style.position="absolute";
+			obj.style.top=y+"px";
+			obj.style.left=x+"px";
+			//把obj加到body中
+			document.body.appendChild(obj);
+			//给对象绑定事件
+			obj.onclick=removestar;
+			//记录星星个数
+			count++;
+			//调用函数告诉玩家有多少个星星
+			countxingxing();
+			//改变进度条
+			document.getElementById("span2").style.width=count*5+"px";
+			document.getElementById("span2").style.backgroundColor="red";
+		}
+		//删除星星的函数
+		function removestar(){
+			
+			
+			// this 代表当前绑定该事件的对象
+			
+			this.parentNode.removeChild(this);
+			count--;
+			countxingxing();
+		}
+		//点击开始游戏的函数
+		function startxingxing(){
+			dingshiqi=window.setInterval("star()",500);
+			gametime=window.setInterval("youxishijian()",1000);
+		}
+		//暂停游戏
+		function zanting(){
+			alert("暂停游戏");// 对话框有拦截的作用
+		}
+		//星星个数
+		function countxingxing(){
+			var shu=document.getElementById("count");
+			if(count>20){
+				alert("游戏结束");
+				window.clearInterval(dingshiqi);
+				window.clearInterval(gametime);
+			}
+			shu.innerHTML=count+"个星星";
+		}
+		//记录游戏时间
+		function youxishijian(){
+			var obj=document.getElementById("jishi");
+			shijian++;
+			obj.innerHTML="游戏进行"+shijian+"秒";
+		}
+	</script>
+</head>
+<body>
+<span id="count">0个星星</span>
+<input type="button" value="点击开始游戏" onclick="startxingxing()">
+<input type="button" value="点击暂停游戏" onclick="zanting()">
+<span id="jishi">游戏进行0秒</span>
+<span id="span1"><span id="span2"></span></span>
+</body>
+</html>

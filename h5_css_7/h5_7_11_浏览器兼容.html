@@ -1,0 +1,44 @@
+<!-- 
+
+常用兼容性技巧
+1.初始化清除浏览器默认值及HACK法：
+
+.box{
+	color:white;
+	background:blue; /*ff,7*/
+	background:red \9; /*ie6 7 8*/
+	*background:black; /*ie6 7*/
+	_background:orange;/*ie6*/
+}
+
+2.初始化清除浏览器默认值：ul,li,body{margin:0;padding:0}
+
+-->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title> new document </title>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+  <meta name="author" content="" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <link rel="stylesheet" type="text/css" href="" />
+  <style type="text/css">
+.box{
+width:100px; height:100px;
+float:left;
+display:inline;
+margin:20px;
+background:blue; /*ff,7*/
+background:red \9; /*ie6 7 8*/
+*background:black; /*ie6 7*/
+_background:orange;/*ie6*/
+}
+  </style>
+ </head>
+
+ <body>
+  <div class="box"></div>
+ </body>
+</html>

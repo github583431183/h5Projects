@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-cn">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<title>网页标题</title>
+	<meta name="keywords" content="关键字列表" />
+	<meta name="description" content="网页描述" />
+	<link rel="stylesheet" type="text/css" href="" />
+	<style type="text/css">
+		#div{
+			font-size:60px;
+			margin:0 auto;
+			width:900px;
+			border:1px solid red;
+			text-align:center
+		}
+	</style>
+	<script type="text/javascript">
+	
+	/*
+	
+定时器：
+	1）反复性定时器：格式：window.setInterval(“fn()”,1000);
+		a)会反复执行
+		b)第二个参数是以毫秒计算的
+	2）一次性定时器：格式：window.setTimeout(“fn()”,1000);
+		a)执行一次
+		b)第二个参数是以毫秒计算的
+清除定时器：
+	1）window.clearInterval();清除反复性定时器
+	2）window.clearTimeout();清除一次性定时器
+	
+	*/
+	
+		//启动定时器
+		var n1=self.setInterval("fn()",50);
+		//显示时间函数
+		function fn(){
+			var d1=new Date;
+			var obj=document.getElementById("div");
+			obj.innerHTML=d1.toLocaleString();
+		}
+		//清除定时器
+		function qingchu(){
+			window.clearInterval(n1);
+		}
+		//继续定时器
+		function jixu(){
+			n1=window.setInterval("fn()",1000);
+		}
+		//自动停止定时器
+		window.setTimeout("qingchu()",60000);
+	</script>
+</head>
+<body>
+<div id="div">时间</div>
+<input type="button" value="清除定时器" onclick="qingchu()">
+<input type="button" value="继续定时器" onclick="jixu()">
+</body>
+</html>

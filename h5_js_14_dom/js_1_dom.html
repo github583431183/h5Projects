@@ -1,0 +1,164 @@
+DOM的官方定义
+	DOM Document Object Model 文档对象模型。
+	DOM的官方定义：W3C的DOM，可以使程序或脚本(JS或AS、JScript)，动态的访问或操作文档的内容、结构、样式。
+	DOM只是一个标准，就是操作网页的标准。而这个标准(模型)在浏览器中，以“对象”的方式实现。
+
+DOM的分类
+	核心DOM：提供了操作HTML文档(显示)或XML文档(存储数据)的公共的属性和方法。
+	HTMLDOM：针对HTML文档，提供的专有的属性和方法。
+	XMLDOM：针对XML文档，提供的专有的属性和方法。
+	EventDOM：事件DOM，提供了很多的常用事件。
+	CSSDOM：提供了操作CSS的一个接口。
+	
+HTML节点树
+
+				
+					<html>根节点
+					
+		<head>                           <body>
+		
+<meta>                                   <table>                                
+
+<title>                                  <tbody>
+
+文本节点
+最底层节点                        <tr>                <tr>
+
+							<td>   <td>   <td>
+							
+						  文本节点
+						  
+						  
+DOM中节点的类型：
+	document文档节点：代表整个网页，document文档节点不对应标记。是访问文档中各元素的起点。
+	element元素节点：元素节点对应于网页中的各标记。
+	attribute属性节点：每个元素都有若干个属性。
+	text文本节点：文本节点是最底层节点。
+	
+	
+核心DOM公共属性和方法
+	nodeName：节点名称。
+	nodeValue：节点的值。
+	firstChild：第一个子节点。
+	lastChild：最后一个子节点。
+	parentNode：父节点。
+	childNodes：子节点列表，是一个数组。
+	
+节点访问
+
+查找html节点的方法
+	document.firstChild  
+	document.documentElement(兼容性较好)
+	
+查找body节点的方法
+	document.firstChild.lastChild
+	document.body(推荐使用)
+	
+节点属性
+
+1、getAttribute()——获取属性的值
+	描述：获取节点属性的值。
+	语法：nodeObj.getAttribute(name)
+	参数：name代表当前节点的某个属性。
+	举例：var src = imgObj.getAttribute(“src”)
+2、setAttribute()——添加属性
+	描述：给某个节点添加属性。
+	语法：nodeObj.setAttribute(name,value)
+	参数：
+	name代表属性名称。
+	value代表属性的值。
+	举例：imgObj.setAttribute(“src” , “images/02.jpg”)
+3、removeAttribute()——删除属性
+	描述：删除某个节点的属性。
+	语法：nodeObj.removeAttribute(name)
+	举例：imgObj.removeAttribute(“src”)
+	
+节点操作
+
+	createElement()创建节点
+		语法：var nodeObj = document.createElement(tagName)
+	appendChild()追加节点
+		语法：parentNode.appendChild(childNode)
+	
+	
+HTML DOM简介和新特性
+	在核心DOM中，已经可以实现对网页元素的操作了，为什么还要有HTMLDOM呢？
+	因为，核心DOM中，对节点的访问，都是从根节点开始的，访问方式十分麻烦。特别是当节点层次很深时，更是麻烦。因此，才有了HTMLDOM。
+	1、HTMLDOM的新特性
+		每一个HTML标记，都对应一个对象。如：<img>标记，就是一个img对象。
+		每一个HTML标记的属性，与对应的元素对象的属性，一一对应。
+			<img>属性：src、width、height、border、style、title、id、class等。
+			在JS中，img对象属性：src、width、height、border、style、title、id、className等。
+	2、HTML DOM访问HTML元素的方法
+		（1）根据元素的id查找对象——document.getElementById(id)
+		
+		（2）根据HTML标签名找对象
+		
+			描述：根据HTML标签名找对象
+			语法：var arr = parentNode.getElementsByTagName(tagName)
+			参数：
+			tagName就是要查找的标签名称，不能带尖括号。
+			parentNode代表上层节点。
+			返回值：返回一个对象数组。
+			举例：ulObj.getElementsByTagName(“li”)
+			
+元素对象的属性
+	tagName：与nodeName功能一样。
+	className：与class属性功能一样。
+	innerHTML：设置或读取某个标记中的所有内容，包括HTML文本。只能用于双边标记。
+		nodeValue：指纯文本。
+	offsetWidth：指元素的可见宽度，不含滚动条中的内容。只读属性。不带px单位。
+	offsetHeight：指元素的可见高度，不含滚动条中的内容。只读属性。不带px单位。
+	scrollWidth：指元素的总宽度，包含滚动条中的内容。只读属性。不带px单位。
+	scrollHeight：指元素的总高度，包含滚动条中的内容。只读属性。不带px单位。
+	scrollTop：当元素出现滚动条时，向下拖动滚动条，内容向上滚动的距离。可读可写属性。不带px单位。
+		如果该元素没有滚动条，则scrollTop的值为0，该值只能是正值。
+	scrollLeft：与scrollTop描述一样，只是向左滚动的距离。
+
+事件：onscroll
+	描述：当拖动滚动条时发生。
+	
+	
+Event DOM
+1、事件简介
+	事件可以实现人机交互，或者与网页的交互。
+	当网页加载完成(onload)，更改网页背景色(功能函数)。
+2、事件属性
+	每一个HTML标记的属性，与元素对象的属性，一一对应。
+	每一个HTML标记的事件属性，与元素对象的事件属性，也是一一对应。
+	HTML中的事件属性：onMouseOver、onLoad、onClick……
+	JS中的事件属性：onmouseover、onload、onclick……
+	注意：JS中的事件属性，要全小写。
+	提示：事件发生后，调用的一定是JS函数，不管是有名函数，还是匿名函数。
+	
+Event对象简介
+
+当事件发生时，会自动向事件调用函数，传递一个event参数。那么，这个event参数，就是event对象。
+Event对象的作用：可以获取当前事件发生时的环境信息。如：点击时的坐标值。
+Event对象是短暂存在的，也就是：当一个新的事件发生时，这个event对象就消失了。
+每时每刻，只能有一个事件发生。每时每刻，只能有一个event对象产生。
+
+
+DOM中Event对象——标准浏览器(火狐、谷歌)
+1、DOM中引入Event对象
+	（1）通过HTML标记的事件属性来传递event对象
+		提示：在传递event时，该event参数，必须全小写，并且不能加引号。
+
+	（2）使用元素对象的事件属性来传递event对象
+	
+2、DOM中Event对象属性
+	type：事件类型
+	clientX和clientY：相对浏览器窗口的坐标。
+	pageX和pageY：相对网页左端和顶端的距离。
+	screenX和screenY：相对显示屏幕左端和顶端的距离。
+	
+
+IE中Event对象
+	在IE中，event是window对象的一个属性。如：window.event或event
+	
+	1、IE中引用Event对象
+	2、IE中Event对象属性
+		type：事件类型
+		clientX和clientY：相对浏览器窗口的坐标。
+		x和y：相对于网页的坐标。
+		screenX和screenY：相对于屏幕的坐标。

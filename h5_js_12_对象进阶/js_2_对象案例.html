@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-cn">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<title>网页标题</title>
+	<meta name="keywords" content="关键字列表" />
+	<meta name="description" content="网页描述" />
+	<link rel="stylesheet" type="text/css" href="" />
+	<style type="text/css"></style>
+	<script type="text/javascript">
+		function jisuan(){
+			var n1=document.getElementById("d1");//获得第一个input
+			var num1=n1.value;
+			
+			var n2=document.getElementById("d2");//获得第二个input
+			var num2=n2.value;
+			
+			var n3=document.getElementById("d3");//获得第三个input
+			
+			//获得运算符号
+			var fh=document.getElementById("fuhao").value;
+			alert(typeof(fh));//string 类型
+			if(fh=="+"){
+				var jieguo=parseInt(num1)+parseInt(num2);
+			}else if(fh=="-"){
+				var jieguo=parseInt(num1)-parseInt(num2);
+			}else if(fh=="*"){
+				var jieguo=parseInt(num1)*parseInt(num2);
+			}else if(fh=="/"){
+				var jieguo=parseInt(num1)/parseInt(num2);
+			}
+			//var he=parseInt(num1)+parseInt(num2);
+			//n3.value=he;
+			n3.value=jieguo;
+		}
+	</script>
+</head>
+<body>
+<input type="text" id="d1" value="请输入数字"/>
+<select id="fuhao">
+	<option value="+">+</option>
+	<option value="-">-</option>
+	<option value="*">*</option>
+	<option value="/">/</option>
+</select>
+<input type="text" id="d2" />
+=
+<input type="text" id="d3" />
+
+<input type="button" value="计算" onclick="jisuan()" />
+<input type="button" value="dianji">
+</body>
+</html>

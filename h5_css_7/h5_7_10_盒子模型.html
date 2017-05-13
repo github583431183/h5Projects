@@ -1,0 +1,39 @@
+<!-- 
+
+盒子模型：边框线，内填充，外边距
+	border 边框线
+	padding 内填充
+	margin 外边距
+	  top right bottom left
+总宽度：(margin-left+padding-left+border-left)*2+width(内容宽度)。
+总宽度问题 加DTD（IE）
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+外边距合并问题
+margin,上下合并（大吃小），左右叠加
+
+-->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+<title> new document </title>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+  <meta name="author" content="" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <link rel="stylesheet" type="text/css" href="" />
+  <style type="text/css">
+  .box1{ width:200px; height:200px; border:10px solid red; padding:10px; margin:50px; float:left;}
+  .box2{ width:200px; height:200px; border:10px solid red; padding:10px; margin:50px; float:left;}
+  </style>
+ </head>
+
+ <body>
+  <div class="box1">
+  这是内容1111
+  </div>
+  <div class="box2">
+  这是内容2222
+  </div>
+ </body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-cn">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<title>网页标题</title>
+	<meta name="keywords" content="关键字列表" />
+	<meta name="description" content="网页描述" />
+	<link rel="stylesheet" type="text/css" href="" />
+	<style type="text/css"></style>
+	<script type="text/javascript">
+		//求数组中所有项的和
+		var arr=[
+					[23,45,23,45,23],
+					[45,35,67,4355,23],
+					[34,56,2322,56569,234]
+				];
+		//var arr=[23,23,43,435,236];
+		var sum=0;
+		for(var i=0;i<arr.length;i++){//i是外面数组的下标
+			for(var j=0;j<arr[i].length;j++){//j是里面数组的下标
+				sum=sum+arr[i][j];
+			}
+		}
+		document.write("二维数组的和为:"+sum);
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>

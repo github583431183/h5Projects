@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-cn">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<title>网页标题</title>
+	<meta name="keywords" content="关键字列表" />
+	<meta name="description" content="网页描述" />
+	<link rel="stylesheet" type="text/css" href="" />
+	<style type="text/css"></style>
+	<script type="text/javascript">
+	
+	/*
+	
+	为了完成某个功能而定义的代码的集体
+	语法：
+		定义语法：	function 函数名(形式参数1，形式参数2……){
+					//代码，这些代码叫做函数体
+					renturn 某值;
+	}
+	调用语法：函数名(实际参数1，实际参数2……);
+	注意：
+		1）形式参数和实际参数必须是一一的对应
+		2）函数调用的时候和定义的时候必须是相同的名字
+		3）return的时候，只能是值
+		4）形式参数和实际参数可以有很多个
+		
+		
+		
+	return详解
+		1）return返回某个值
+		2）return可以返回true和fasle，值
+		3）return就是返回的意思【return可以让函数停止不执行】
+	
+	函数名:
+		1）不能和系统关键字相同
+		2）让函数名有意义
+	作用域：
+		1）全局变量：所有地方都能用的变量函数外部申明的变量
+		2）局部变量：在函数内部申明的变量就是局部变量
+	注意：
+		我们只关注局部变量
+		
+	函数注意：
+		1）函数在写好之后不会立即执行，只有在调用的情况下才会执行
+		2）函数可以放到任意位置，可以把函数写在调用之前，也可以写在调用之后
+	
+	
+	*/
+	
+		//已知半径，用函数求出任意圆的面积
+		function qiumianji(r){
+			//var r=10;
+			var mianji = 3.14*r*r;
+			document.write("面积为:"+mianji);
+		}
+		qiumianji(10);
+		
+		//已知直角三角形的两个直角边，求斜边,任意直角三角形
+		function qiuxiebian(a,b){
+			//var a=3;
+			//var b=4;
+			var he=a*a+b*b;
+			var xiebian=Math.pow(he,0.5);
+			document.write("斜边为:"+xiebian);
+		}
+		qiuxiebian(3,4);
+		
+		//求任意两个数的平方和
+		function qiuhe(a,b){
+			// return;  undefined 
+			var he = a*a+b*b;//he=25;
+			return he;
+		}
+		var pingfanghe=qiuhe(3,4);
+		document.write("平方和为："+pingfanghe);
+		
+	</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,62 @@
+如何获取对象
+
+	Document.getElementById(“id”);通过这种方法可以获得这个id名的标签对象
+
+	Document.getElemetsByTagName(“标签名”)通过这种方法可以获得标签名的标签对象
+	注意：这个时候获得的是数组形式的
+
+	Document.body：获得body这个对象
+
+创建标签：
+
+	document.createElement(“标签名”);
+	例如：
+	Var obj=document.ceateElement(“img”);// 创建标签
+	Document.body.appendChild(obj);// 加入标签
+
+
+Js控制改变标签的html属性和Css属性
+
+注意：从网页上获得的数据都是字符串
+
+1)首先获取标签
+2)找到对应的标签属性并赋值
+	1)HTML的标签属性设置
+		i.取值var w=对象.HTML属性名(width|height)
+		ii.对象.HTML属性名=值
+		
+		例如：
+		Var obj=document.getElementById(“d1”);//img标签
+		Var w=obj.width;//w保存的是200
+		Obj.width=w+20; //=>w=w+20
+		Obj.width=obj.width+20
+		
+	2)CSS属性设置
+		i.Var ab=对象.style.CSS属性名
+		ii.对象.style.CSS属性名=值（字符串）
+		
+		JS控制CSS属性语法
+		HTML	CSS	            JS
+		Width	background-colr	backgroundColor
+		height	margin-left	    marginLeft
+		
+		例如：
+		var abc=document.getElementById("div1");
+			abc.style.backgroundColor="yellow";
+			abc.style.fontSize="60px";
+			abc.style.border="3px solid blue";
+			abc.style.margin="30px";
+			abc.style.padding="30px";
+			
+innerHTML和value对比
+
+注意：双标签都需要用到innerHTML
+
+innerHTML：所有在这个对象之内的内容都是innerHTML的内容
+
+value内容
+一般情况：input的时候都是value
+
+
+
+

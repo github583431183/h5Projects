@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title> new document </title>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+  <meta name="author" content="" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <link rel="stylesheet" type="text/css" href="" />
+  <style type="text/css">
+  
+  /*
+  
+  CSS属性——背景属性
+  
+  background-color	#ff0000、red、rgb(255,0,0)	背景颜色
+background-image	url(图像路径和名称);	背景图像
+background-repeat	repeat、repeat-x、repeat-y、 no-repeat	背景图像是否重复
+Background-position	center center或x% y%或xpos ypos	背景图像起始位置
+background-attachment 	scroll或fixed	设置背景图像是固定还是滚动
+background	url(1.jpg) no-repeat center center	设置背景的简写形式
+  
+  */
+  
+  body{background-color:#afeffa;}
+  .box{width:100px; height:100px; border:5px solid blue;
+  background-image:url(ball.gif);
+  background-repeat:no-repeat;
+  /*
+  背景图定位
+小图放到整合成大图，减少向服务器的请求
+在大图上要显示哪一部分，通过坐标进行定位
+背景图的左上角是0，0 坐标
+一般定位：背景图Y轴向上移，X轴向左移
+background-positon:-100px -50px;
+意思是：背景将向上移100px,同时向左移动50px.
+
+  */
+  background-position:-50px -150px;
+  margin:0 auto;
+  }
+  </style>
+ </head>
+
+ <body>
+  <div class="box">
+
+  </div>
+ </body>
+</html>

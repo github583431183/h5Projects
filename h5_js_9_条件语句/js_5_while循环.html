@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-cn">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<title>网页标题</title>
+	<meta name="keywords" content="关键字列表" />
+	<meta name="description" content="网页描述" />
+	<link rel="stylesheet" type="text/css" href="" />
+	<style type="text/css"></style>
+	<script type="text/javascript">
+	
+	
+	/*
+	
+	流程控制之while循环
+		1，循环变量的初始化
+		2，循环变量的改变
+		3，循环条件的判断
+	格式：
+		Var i=1;【循环变量的初始化】
+		While(//表达式【循环条件的判断】){
+		 //循环体alert，documet.write，i++
+		 i++;【循环变量的改变】
+		}
+	如果表达式成立，那么就会执行循环体[大括号里面的代码]
+	当表达式成立，就执行循环体，执行循环体之后，又会回到表达式判断的地方，继续判断表达式是否成立，如果成立，继续执行循环体，如果不成立，跳出循环【不执行循环】
+			
+	*/
+	
+		//输出1到100之间所有的数字
+		var i=1;
+		while(i<=100){
+			document.write(i+" ");//1,6,11,16,21,26.....91,96
+									//1到100都输出
+			i++;//i=i+5;
+		}
+		document.write("<br />");
+		//1到100之间能被3整除的数偶数
+		var i=1;
+		while(i<=100){
+			if(i%3==0&&i%2==0){
+				document.write("满足条件的数有:"+i+"<br />");
+			}
+			i++;
+		}
+		document.write("<br />");
+		//第一个问题：1到100奇数和
+		//第二个问题：（1到100）能被三整除的数的个数
+		//求和思想，有一个变量，把所有的数据都相加放到一起
+		var i=1;
+		var sum=0;
+		while(i<=100){
+			if(i%2!=0){
+				sum=sum+i//sum+=i;
+			}
+			i++;
+		}
+		document.write("和sum为："+sum);
+	</script>
+</head>
+<body>
+
+</body>
+</html>

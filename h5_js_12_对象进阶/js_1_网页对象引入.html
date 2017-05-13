@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-cn">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<title>网页标题</title>
+	<meta name="keywords" content="关键字列表" />
+	<meta name="description" content="网页描述" />
+	<link rel="stylesheet" type="text/css" href="" />
+	<style type="text/css">
+		#div1{
+			background-color:red;
+		}
+	</style>
+	<script type="text/javascript">
+	
+	/*
+	
+	对象
+	值具体的东西，在以js的眼光看所有的标签都是标签对象
+	
+	*/
+	
+		function biangao(){
+			var obj=document.getElementById("d1");//获得id为d1的标签的对象
+			var h = obj.height//获得这个对象的高度的值
+			//alert(h);
+			obj.height=h+20;
+		}
+		function biankuan(){
+			var obj=document.getElementById("d1");//获得id为d1的标签的对象
+			var w=obj.width;
+			obj.width=w+20;
+		}
+		
+		function biancolor(){
+			var abc=document.getElementById("div1");
+			abc.style.backgroundColor="yellow";
+			abc.style.fontSize="60px";
+			abc.style.border="3px solid blue";
+			abc.style.margin="30px";
+			abc.style.padding="30px";
+		
+		}
+	</script>
+</head>
+<body>
+<input type="button" value="点击变高" onclick="biangao()" />
+<input type="button" value="点击变宽" onclick="biankuan()" />
+
+<img src="images/022_avatar_big.jpg" width="200" height="250" id="d1" />
+
+<div id="div1" onclick="biancolor()">
+	这是文字内容
+</div>
+</body>
+</html>

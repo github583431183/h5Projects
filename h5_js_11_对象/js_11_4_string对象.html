@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-cn">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<title>网页标题</title>
+	<meta name="keywords" content="关键字列表" />
+	<meta name="description" content="网页描述" />
+	<link rel="stylesheet" type="text/css" href="" />
+	<style type="text/css"></style>
+	<script type="text/javascript">
+	
+	/*
+	
+	字符串对象
+	Var str=”abcdefgab”;//简写形式
+	Var str=new String(”abcdefgab”);//标准形式
+	
+	字符串方法
+	str.indexOf(“字符”);可以获得这个“字符“的第一个下标
+		如果字符串中找不到要找的字符，那么返回的就是-1
+		
+	str.lastIndexOf(“字符”); 以获得这个“字符“的最后出现下标
+	
+	str.toUpperCase:转换为大写形式
+	str.toLowerCase:转换为小写形式
+	
+	charCodeAt(数);获得制定位置的Unicode编码
+		记住：小写a=97,大写A=65;
+	charAt(数);获得这个数的位置的字符
+	
+	substr(数字1，数字2)//截取字符串，如果只有一个数字，从数字开始截取到最后，如果有
+						两个数字，从数字1截取数字2个
+	substring(数字1，数字2);
+	
+	如果只有一个数字截取到最后，如果有两个，就是从数字1开始						
+	到数字2之前，但是不会包含数字2,如果数字1和数字2从小到						
+	大或者从大到小放的位置不同，那么默认的从最小的数开始找
+	
+	
+	*/
+	
+	var str="abcd";
+	var str1=new String("ab");
+	document.write("str为"+str+"str1为"+str1);
+	
+	//字符串方法练习
+	
+		var str="abcdefabc";
+		var n1=str.indexOf("cdef");
+		var n2=str.lastIndexOf("bc");
+		var n3=str.toUpperCase();
+		var n4=str.toLowerCase();
+		var n5=str.charCodeAt(2);
+		var n6=str.charAt(3);
+		var n7=str.substr(3,3);
+		var n8=str.substring(3,7);
+		
+		document.write("n8:"+n8);
+		
+		//basdjkj.png
+		function check(){
+			//获得字符串的后缀
+			//加入允许上传的文件类型[jpg,png,gif]
+			var zhaopian=document.getElementById("wenjian").value;//zhaopian="bomdom.jpg";
+			var n=zhaopian.lastIndexOf(".");
+			var houzhui=zhaopian.substr(n+1);
+			houzhui=houzhui.toLowerCase();
+			if(houzhui=="jpg"||houzhui=="png"||houzhui=="gif"){
+				alert("您可以上传啦");
+			}else{
+				alert("照片太丑重新上传哦");
+			}
+		}
+	</script>
+</head>
+<body>
+请上传您的玉照：
+<input type="file" id="wenjian">
+<input type="button" value="点击上传" onclick="check()">
+</body>
+</html>
