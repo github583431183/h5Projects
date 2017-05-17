@@ -1,0 +1,146 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-cn">
+
+<head>
+
+	<meta http-equiv="Content-Type" content="text/html;charset=gbk" />
+
+	<title>轮播图</title>
+	<meta name="keywords" content="关键字列表" />
+	<meta name="description" content="网页描述" />
+	<link rel="stylesheet" type="text/css" href="" />
+	<style type="text/css">
+	
+		/* 标签选择器*/
+		div{
+			width:600px;
+			border:1px solid red;
+			overflow:hidden;
+		}
+		
+		/* id选择器*/
+		#img1{
+			float:left
+		}
+		
+		/* id选择器*/
+		#ul1{
+			float:right;
+			margin:0px;
+			padding:0px;
+			margin:0px 30px 0 0;
+		}
+	
+		/* 后代选择器*/
+		#ul1 li{
+			list-style:none;
+			border:1px solid gray;
+			padding:0px;
+			width:30px;
+			height:20px;
+			margin:6px;
+			line-height:20px;
+			text-align:center;
+		}
+	
+	</style>
+	<script type="text/javascript">
+			
+			var n = 1;// 图片标记数
+			var dingshiqi;// 让图片动的定时器
+			var beijing;// ul 中li 的背景色
+			
+			// 页面加载完成时的函数
+			window.onload=function init(){
+				dongtupian(); // 轮播图片
+				huanbeijing("li1"); // 谁知ul 的背景
+			}
+			
+			// 换图片的函数
+			function tupian(){
+				
+				var obj = document.getElementById("img1");
+				
+				n++;
+				
+				// 越界，复原
+				if(n>=7){
+					n=1;
+				}
+				
+				// 切换图片
+				obj.src="images/dd_scroll_"+n+".jpg";
+				
+				huanbeijing("li"+n);
+			
+			}
+			
+			// 鼠标放上停止图片的函数
+			function stoptupian(){
+				window.clearInterval(dingshiqi);
+			}
+			
+			// 鼠标离开图片继续的函数
+			function dongtupian(){
+				dingshiqi = window.setInterval("tupian()",1000);
+			}
+		
+			
+		
+			// 鼠标放到li上体制图片查看指定的图片
+			function tingtupian(index,lix){
+			
+				var obj = document.getElementById("img1");
+				// 改变图片的src 的图片地址
+				n = index;
+				obj.src = "images/dd_scroll_"+n+".jpg";
+				// 清楚定时器
+				window.clearInterval(dingshiqi);
+				// 换背景的函数
+				huanyuantupian();
+				lix.style.backgroundColor="orange";
+			}
+			
+			// 根据索引 换背景
+			function huanbeijing(lix){
+				
+				huanyuantupian();
+			
+				var obj = document.getElementById(lix);
+			
+				obj.style.backgroundColor="orange";
+				
+			}
+			
+			
+			function huanyuantupian(){
+				// 还原ul 中 li 的颜色
+				for(var i= 1;i<=6;i++){
+					var li1 = document.getElementById("li"+i);
+					li1.style.backgroundColor="white"// 白色
+				}
+			}
+		
+	</script>
+</head>
+
+<body>
+
+	<div>
+		<img id="img1" src="images/dd_scroll_1.jpg" onmouseout="dongtupian()" onmouseover="stoptupian()"/>
+		<ul id="ul1">
+		
+			<li id="li1" onmouseout="dongtupian()" onmouseover="tingtupian(1,this)">1</li>
+			<li id="li2" onmouseout="dongtupian()" onmouseover="tingtupian(2,this)">2</li>
+			<li id="li3" onmouseout="dongtupian()" onmouseover="tingtupian(3,this)">3</li>
+			<li id="li4" onmouseout="dongtupian()" onmouseover="tingtupian(4,this)">4</li>
+			<li id="li5" onmouseout="dongtupian()" onmouseover="tingtupian(5,this)">5</li>
+			<li id="li6" onmouseout="dongtupian()" onmouseover="tingtupian(6,this)">6</li>
+			
+		</ul>
+	</div>
+
+</body>
+
+</html>
