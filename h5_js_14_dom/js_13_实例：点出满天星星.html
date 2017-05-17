@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html onclick="init(event)">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<script type="text/javascript">
+//实例：点出满天小星星
+/*
+	(1)给<html>添加onclick事件
+	(2)更改网页背景色
+	(3)创建图片节点，并追加到body父节点下
+	(4)图片定位
+	(5)图片随机大小
+
+*/
+function init(e)
+{
+	//创建图片节点
+	var imgObj = document.createElement("img");
+	
+	//添加src属性
+	imgObj.src = "images/xingxing.gif";
+	//添加width属性
+	imgObj.width = getRandom(15,85);
+	//添加style属性
+	var x = e.clientX ? e.clientX : event.clientX;// 兼容ie
+	var y = e.clientY ? e.clientY : event.clientY;
+	imgObj.style.position = "absolute";
+	imgObj.style.left = x - imgObj.width/2 + "px";
+	imgObj.style.top = y - imgObj.width/2 + "px";
+	
+	//追加节点
+	document.body.appendChild(imgObj);
+}
+function getRandom(min,max)
+{
+	return Math.floor(Math.random()*(max-min)+min);
+}
+</script>
+</head>
+
+<body style="background-color:black;"></body>
+</html>

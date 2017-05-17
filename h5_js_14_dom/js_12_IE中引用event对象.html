@@ -1,0 +1,22 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<script type="text/javascript">
+//实例：在IE中，获取鼠标坐标值
+function get_xy()
+{
+	var str = "窗口左边距离："+event.clientX+",窗口上边距离："+event.clientY;
+	str += "\n网页左边距离："+event.x+",网页顶边距离："+event.y;
+	str += "\n屏幕左边距离："+event.screenX+",屏幕顶边距离："+event.screenY;
+	str += "\n事件类型："+event.type;
+	alert(str);
+}
+</script>
+</head>
+
+<body>
+<img width="400" src="images/01.jpg" onClick="get_xy()" />
+</body>
+</html>

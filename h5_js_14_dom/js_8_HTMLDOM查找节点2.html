@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<script type="text/javascript">
+window.onload = init;
+function init()
+{
+	//获取id=u01的元素对象
+	var ulObj = document.getElementById("u01");
+	//获取所有的li的元素对象
+	var arr = ulObj.getElementsByTagName("li");
+	//循环数组
+	for(var i=0;i<arr.length;i++)
+	{
+		arr[i].style = "color:blue;text-decoration:underline;";
+		arr[i].onmouseover = function(){
+								// this 指 当前<li>
+								this.style.backgroundColor = "yellow";
+							}
+	    arr[i].onmouseout = function(){
+								this.style.backgroundColor = "";
+							}
+	}
+}
+</script>
+</head>
+<body>
+<ul id="u01">
+	<li>HTML超文本标注语言</li>
+	<li>CSS层叠样式表</li>
+	<li>JavaScript客户端脚本程序</li>
+	<li>Apache服务器</li>
+</ul>
+</body>
+</html>

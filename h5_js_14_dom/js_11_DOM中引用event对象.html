@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<script type="text/javascript">
+//实例：单击图片，显示坐标值
+window.onload = function()
+{
+	//获取id=img01的元素对象
+	var imgObj = document.getElementById("img01");
+	//绑定onclick事件：这种情况不能带括号，也不能传参数
+	//但是，第一个形参，就是event对象。
+	imgObj.onclick = get_xy; //传地址，不带括号
+}
+function get_xy(e)//必须接收event参数
+{
+	var str = "窗口左边距离："+e.clientX+",窗口上边距离："+e.clientY;
+	str += "\n网页左边距离："+e.pageX+",网页顶边距离："+e.pageY;
+	str += "\n屏幕左边距离："+e.screenX+",屏幕顶边距离："+e.screenY;
+	str += "\n事件类型："+e.type;
+	alert(str);
+}
+</script>
+</head>
+<body>
+<img id="img01" width="400" src="images/01.jpg" />
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<script type="text/javascript">
+//网页加载完成后，调用匿名函数
+window.onload = function()
+{
+	//获取<img>元素对象
+	var imgObj = document.body.firstChild;
+	//添加imgObj对象属性
+	//imgObj.setAttribute("src","images/01.jpg");
+	imgObj.src = "images/01.jpg";
+	imgObj.width = 400;
+	imgObj.border = 2;
+	imgObj.style = "border:5px dotted red;padding:10px;background-color:yellow; ";
+}
+</script>
+</head>
+
+<body><img /></body>
+</html>

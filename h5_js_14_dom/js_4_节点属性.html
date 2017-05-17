@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<script type="text/javascript">
+//当网页加载完成，调用JS程序
+//匿名函数：就是没有名字的函数。
+//匿名函数，不能单独定义，也不能单独调用
+//匿名函数，只能作为数据传给其它变量
+window.onload = function()
+{
+	//查找img节点
+	var imgObj = document.body.firstChild;
+	//添加src属性
+	imgObj.setAttribute("src","images/01.jpg");
+	//添加width属性
+	imgObj.setAttribute("width",400);
+	//添加border属性
+	imgObj.setAttribute("border",2);
+	//添加style属性
+	imgObj.setAttribute("style","padding:20px");
+	//添加onclick属性
+	imgObj.setAttribute("onclick","removeImg(this)");
+}
+//函数：删除src属性
+function removeImg(imgObj)
+{
+	//删除src属性
+	imgObj.removeAttribute("src");
+	imgObj.removeAttribute("width");
+}
+</script>
+</head>
+
+<body><img /></body>
+</html>

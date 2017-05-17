@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style type="text/css">
+/*全局样式*/
+body,ul,li{margin:0px;padding:0px;}
+ul,li{list-style:none;}
+body{font-size:12px;}
+#dome{
+	width:200px;
+	height:250px;
+	margin:50px auto;
+	overflow:hidden; /*溢出属性*/
+}
+#dome li{line-height:24px;border-bottom:1px dashed #ccc;}
+</style>
+<script type="text/javascript">
+//实例：书讯快递
+/*
+	(1)网页加载完成，动画自动开始
+	(2)获取三个<div>的对象
+	(3)将三个<div>的高度设为一致
+	(4)将dome1的内容，复制到dome2中
+	(5)使用定时器：每隔40毫秒，动画向上滚动1个像素。
+	(6)判断是否滚动到底了：滚动上去的距离，如果等于dome的高度
+	   则开始下一次滚动。
+	(7)鼠标放上停止滚动，鼠标移开继续滚动
+*/
+//网页加载完成，动画自动开始
+var dome; //全局变量
+var timer; //定时器变量
+window.onload = function()
+{
+	//获取三个<div>对象
+	dome = document.getElementById("dome");
+	var dome1 = document.getElementById("dome1");
+	var dome2 = document.getElementById("dome2");
+	//将dome的高，复制给dome1和dome2
+	dome1.style.height = dome.offsetHeight + "px";
+	dome2.style.height = dome.offsetHeight + "px";
+	//将dome1的内容，复制到dome2中
+	dome2.innerHTML = dome1.innerHTML;
+	//鼠标放上停止滚动，鼠标移出继续滚动
+	dome.onmouseover = function(){
+							//清除定时器
+							window.clearInterval(timer);
+						}
+	dome.onmouseout = function(){
+							timer = window.setInterval("start2()",40);
+						}
+	//定时器
+	timer = window.setInterval("start2()",40);
+}
+function start2()
+{
+	//如果滚动上去的距离，等于任何一个<div>高度，
+	//则开始下一次滚动
+	if(dome.scrollTop == dome.offsetHeight)
+	{
+		dome.scrollTop = 0;
+	}else
+	{
+		dome.scrollTop++;
+	}
+	
+}
+</script>
+</head>
+
+<body>
+<div id="dome">
+	<div id="dome1">
+		<ul>
+			<li><font color="red">2010考研英语大纲到货75折...</font></li>
+			<li>权威定本四大名著（人民文...</li>
+			<li>口述历史权威唐德刚先生国...</li>
+			<li>袁伟民与体坛风云：实话实...</li>
+			<li>我们台湾这些年：轰动两岸...</li>
+			<li>畅销教辅推荐：精品套书50...</li>
+			<li>2010版法律硕士联考大纲75...</li>
+			<li>计算机新书畅销书75折抢购</li>
+			<li>2009年孩子最喜欢的书>></li>
+			<li>弗洛伊德作品精选集59折</li>
+		</ul>
+	</div>
+	<div id="dome2"></div>
+</div>
+</body>
+</html>
