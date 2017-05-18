@@ -1,0 +1,111 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<script type="text/javascript">
+//实例：表单验证
+function focus_username()
+{
+	//获取id=result_username的元素对象
+	var divObj = document.getElementById("result_username");
+	//写入提示信息
+	divObj.innerHTML = "请输入你的用户名";
+	divObj.style.color = "#ccc";
+}
+function blur_username()
+{
+	//获取name=username和id=result_username的元素对象
+	var inputObj = document.form1.username;
+	
+	var divObj = document.getElementById("result_username");
+	//用户名验证
+	if(inputObj.value=="")
+	{
+		divObj.innerHTML = "对不起，用户名不能为空！";
+		divObj.style.color = "red";
+		return false;
+	}else if(inputObj.value.length<5 || inputObj.value.length>20)
+	{
+		divObj.innerHTML = "用户名长度必须介于5-20个字符之间！";
+		divObj.style.color = "red";
+		return false;
+	}else
+	{
+		divObj.innerHTML = "<img src='images/ok.gif' />";
+		return true;
+	}
+}
+function focus_userpwd()
+{
+	//获取id=result_userpwd的元素对象
+	var divObj = document.getElementById("result_userpwd");
+	//写入提示信息
+	divObj.innerHTML = "请输入你的密码";
+	divObj.style.color = "#ccc";
+}
+function blur_userpwd()
+{
+	//获取name=username和id=result_userpwd的元素对象
+	var inputObj = document.form1.userpwd;
+	var divObj = document.getElementById("result_userpwd");
+	//用户名验证
+	if(inputObj.userpwd.value=="")
+	{
+		divObj.innerHTML = "对不起，密码不能为空！";
+		divObj.style.color = "red";
+		return false;
+	}else if(inputObj.userpwd.value.length<5 || inputObj.userpwd.value.length>20)
+	{
+		divObj.innerHTML = "密码长度必须介于5-20个字符之间！";
+		divObj.style.color = "red";
+		return false;
+	}else
+	{
+		divObj.innerHTML = "<img src='images/ok.gif' />";
+		return true;
+	}
+}
+function checkForm()
+{
+	var flag_username = blur_username();
+	var flag_userpwd = blur_userpwd();
+	if(flag_username && flag_userpwd)
+	{
+		//提交表单
+		return true;
+	}else
+	{
+		//阻止表单提交
+		return false;
+	}
+}
+</script>
+</head>
+<body>
+<form name="form1" method="post" action="login.php" onsubmit="return checkForm()">
+
+	<table width="600" border="1" bordercolor="#ccc" rules="all" align="center" cellpadding="5">
+		<tr>
+			<th colspan="3" bgColor="#f0f0f0">用户登录</th>
+		</tr>
+		<tr>
+			<td width="80" align="right">用户名：</td>
+			<td><input type="text" name="username" onfocus="focus_username()" onblur="blur_username()" /></td>
+			<td width="350"><div id="result_username"></div></td>
+		</tr>
+		<tr>
+			<td width="80" align="right">密码：</td>
+			<td><input type="password" name="userpwd" onfocus="focus_userpwd()" onblur="blur_userpwd()" /></td>
+			<td><div id="result_userpwd"></div></td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+			<td colspan="2"><input type="submit" value="提交表单" /></td>
+		</tr>
+	</table>
+</form>
+
+
+</body>
+</html>

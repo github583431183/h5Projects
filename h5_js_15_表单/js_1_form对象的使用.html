@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<script type="text/javascript">
+//网页加载完成
+window.onload = function()
+{
+	//获取name=form1的元素对象
+	var theForm = document.form1;
+	//给form对象添加属性
+	theForm.method = "post";
+	theForm.action = "login.php";
+	//输出当前的编码方式
+	window.alert(theForm.enctype);
+}
+</script>
+</head>
+<body>
+
+<form name="form1">
+用户名：<input type="text" name="username" />
+密码：<input type="password" name="userpwd" />
+<input type="submit" value="提交表单" />
+</form>
+
+
+</body>
+</html>
